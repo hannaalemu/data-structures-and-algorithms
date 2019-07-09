@@ -10,9 +10,13 @@ Then, write a function named speaker that takes in a string and a callback funct
 
 const greeting = (word) => {
   // Solution code here...
+ return (word.toUpperCase());
 };
 
 const speaker = (message, callback) => {
+   const callback (message) => {
+       return message.toUpperCase();
+   };
   // Solution code here...
 };
 
@@ -33,10 +37,12 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  // Solution code here...
+    // Solution code here...
+    arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
+
   // Solution code here...
 };
 
@@ -58,6 +64,10 @@ const removeOne = (num, arr) => {
 
 const removeElements = (arr, callback) => {
   // Solution code here...
+  for(let i = 0; i<arr.length; i++) {
+      callback();
+      return(arr);
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -68,6 +78,10 @@ Write a function named removeWithForEach that produces the same output as challe
 
 const removeWithForEach = (arr, callback) => {
   // Solution code here...
+  arr.forEach(function(item, index)) {
+      callback();
+      return(arr);
+  };
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -103,6 +117,11 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
+  If (available){
+      availableItems.forEach(function(item, index)){
+          inventory.push(element);
+      }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -120,6 +139,17 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
+    arr.forEach(function(item, index)){
+        If(item / 3 == parseInt){
+            arr.push("Fizz");
+        }
+        If(item / 5 ==parseInt){
+            arr.push("Buzz")
+        }
+        If(item / 3 ==parseInt && element / 5 ==parseInt){
+            arr.push("Fizz Buzz")
+        }
+    };
   // Solution code here...
 };
 
