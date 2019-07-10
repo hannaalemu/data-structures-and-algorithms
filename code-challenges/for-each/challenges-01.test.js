@@ -10,11 +10,11 @@ Then, write a function named speaker that takes in a string and a callback funct
 
 const greeting = (word) => {
   // Solution code here...
- return word.toUpperCase();
+  return word.toUpperCase();
 };
 
 const speaker = (message, callback) => {
-    return callback(message);
+  return callback(message);
   // Solution code here...
 };
 
@@ -35,8 +35,8 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-    // Solution code here...
-    arr.push(value);
+  // Solution code here...
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
@@ -44,8 +44,8 @@ const addNumbers = (num, arr, times, callback) => {
   for (let i = 0; i< times; i++) {
     callback(arr, num);
   }
-    return (arr);
-  
+  return (arr);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -70,9 +70,9 @@ const removeOne = (num, arr) => {
 const removeElements = (arr, callback) => {
   // Solution code here...
   for(let i = 0; i<arr.length; i++) {
-      callback(arr[i], arr);
-    }
-    return(arr);
+    callback(arr[i], arr);
+  }
+  return(arr);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -81,13 +81,10 @@ CHALLENGE 4
 Write a function named removeWithForEach that produces the same output as challenge 3, but uses forEach.
 ------------------------------------------------------------------------------------------------ */
 
-// const removeWithForEach = (arr, callback) => {
-//   // Solution code here...
-//   arr.forEachfunction(item, index)) {
-//       callback();
-//       return(arr);
-//   };
-// };
+const removeWithForEach = (arr, callback) => {
+  // Solution code here.
+
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -121,12 +118,7 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
-  If (available){
-      availableItems.forEach(function(item, index)){
-          inventory.push(element);
-      }
-  }
+  // Solution code here..
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -144,17 +136,7 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-    arr.forEach(function(item, index)){
-        If(item / 3 == parseInt){
-            arr.push("Fizz");
-        }
-        If(item / 5 ==parseInt){
-            arr.push("Buzz")
-        }
-        If(item / 3 ==parseInt && element / 5 ==parseInt){
-            arr.push("Fizz Buzz")
-        }
-    };
+
   // Solution code here...
 };
 
