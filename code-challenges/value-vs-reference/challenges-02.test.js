@@ -29,7 +29,7 @@ console.log(a) prints [1, 2, 3, 1]
 
 const appendFirstToLast = (arr) => {
   // Solution code here...
-  const arr3 = arr.push(arr[0]);
+  arr.push(arr[0]);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -49,6 +49,7 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 
 const addBirthYearProperty = (obj, year) => {
   // Solution code here...
+  obj.yearBorn = year;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -66,6 +67,9 @@ console.log(people[1].isAuthor) prints true
 
 const setStatusAsAuthor = (people) => {
   // Solution code here...
+  people.forEach((value) => {
+    value.isAuthor = true;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -85,7 +89,9 @@ console.log(a) prints [1, 2, 3, 4]
 
 const append = (arr1, arr2) => {
   // Solution code here...
-
+  arr2.forEach((value) => {
+    arr1.push(value);
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
