@@ -10,13 +10,11 @@ Then, write a function named speaker that takes in a string and a callback funct
 
 const greeting = (word) => {
   // Solution code here...
- return (word.toUpperCase());
+ return word.toUpperCase();
 };
 
 const speaker = (message, callback) => {
-   const callback (message) => {
-       return message.toUpperCase();
-   };
+    return callback(message);
   // Solution code here...
 };
 
@@ -42,8 +40,12 @@ const addValues = (arr, value) => {
 };
 
 const addNumbers = (num, arr, times, callback) => {
-
-  // Solution code here...
+  // Solution code here..
+  for (let i = 0; i< times; i++) {
+    callback(arr, num);
+  }
+    return (arr);
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,14 +62,17 @@ Return the modified array.
 
 const removeOne = (num, arr) => {
   // Solution code here...
+  if (num % 3 ===2) {
+    arr.pop();
+  }
 };
 
 const removeElements = (arr, callback) => {
   // Solution code here...
   for(let i = 0; i<arr.length; i++) {
-      callback();
-      return(arr);
-  }
+      callback(arr[i], arr);
+    }
+    return(arr);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,13 +81,13 @@ CHALLENGE 4
 Write a function named removeWithForEach that produces the same output as challenge 3, but uses forEach.
 ------------------------------------------------------------------------------------------------ */
 
-const removeWithForEach = (arr, callback) => {
-  // Solution code here...
-  arr.forEach(function(item, index)) {
-      callback();
-      return(arr);
-  };
-};
+// const removeWithForEach = (arr, callback) => {
+//   // Solution code here...
+//   arr.forEachfunction(item, index)) {
+//       callback();
+//       return(arr);
+//   };
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
