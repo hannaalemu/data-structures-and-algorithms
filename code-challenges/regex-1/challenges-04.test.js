@@ -40,8 +40,10 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   let newArr = [];
-  let finder2 = /\b(a-j)*?\b/gi;
-  newArr.push(arr.match(finder2));
+  const matcher = (arr) => {
+    arr.forEach(arr.match(/\b(a-j)*?\b/gi));
+  newArr.push(arr);
+  };
   return(newArr);
   // Solution code here...
 };
