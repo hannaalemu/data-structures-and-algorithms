@@ -101,6 +101,11 @@ You may also use other string or array methods.
 const splitFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  let steps = gruffaloCrumble.steps;
+  for (let i = 0; i <= steps.length; i++) {
+    var eachStep = steps.slice(i, steps.length);
+    result.push((eachStep[i].split(' '))[0]);
+  }
   return result;
 };
 
