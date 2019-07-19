@@ -62,8 +62,7 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
-  let validator2 = /\b(oct)\b/g;
-  return(input.test(validator2));
+  return input.toString().match(/^[Oo]ct(ober)?$/);
 };
 
 /* ------------------------------------------------------------------------------------------------
