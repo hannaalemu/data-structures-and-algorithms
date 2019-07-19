@@ -10,7 +10,7 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
-    return arr.reduce((accumulator, value) => accumulator + 1);
+  return arr.reduce((accumulator, value) => accumulator + 1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -140,6 +140,12 @@ const characters = [
 
 const countNumberOfChildren = (arr) => {
   // Solution code here...
+  return arr.reduce((accumulator, value) =>{
+    if(Object.keys(value).includes('children')) {
+      accumulator += value.children.length;
+      return accumulator;
+    }else return accumulator;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
