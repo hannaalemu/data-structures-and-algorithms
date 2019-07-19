@@ -9,8 +9,9 @@ Write a function named sortBackwards that takes in an array of numbers and retur
 const sortBackwards = (arr) => {
   // Solution code here...
   arr.sort((a,b) => {
-    return(b > a);
+    return(b-a);
   });
+  return(arr);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,6 +27,7 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 const alphabetize = (arr) => {
   // Solution code here...
 
+  return(arr.sort());
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -39,6 +41,7 @@ const sortByLength = (arr) => {
   arr.sort((a, b) => {
     return (a.length - b.length);
   });
+  return(arr);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -51,24 +54,29 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 
 const alphabetizeBetter = (arr) => {
   // Solution code here...
+  arr.sort( (a,b) => {
+    a.toUpperCase > b.toUpperCase;
+  });
+  return arr;
 };
-
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 5
+// CHALLENGE 5
 
-Write a function named sortByPrice that takes in an array of objects, each of which has a 'price' property, and sorts those objects by price, lowest to highest, returning the same array.
+// Write a function named sortByPrice that takes in an array of objects, each of which has a 'price' property, and sorts those objects by price, lowest to highest, returning the same array.
 
-Here is an example of the input:
-[
-  {name: 'Sweatshirt', price: 45},
-  {name: 'Bookmark', price: 2.50},
-  {name: 'Tote bag', price: 15}
-];
+// Here is an example of the input:
+// [
+//   {name: 'Sweatshirt', price: 45},
+//   {name: 'Bookmark', price: 2.50},
+//   {name: 'Tote bag', price: 15}
+// ];
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
   // Solution code here...
-};
+  return arr.sort((a, b) =>
+    a.price > b.price
+  );};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -80,6 +88,9 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 
 const sortNumbersByLength = (arr) => {
   // Solution code here...
+  return arr.sort((a, b) => {
+    a.toString().length - b.toString().length;
+  });
 };
 
 /*-----------------------------------------------------------------------------------------------
@@ -93,7 +104,6 @@ function Person(firstName, lastName, age) {
   this.lastName = lastName;
   this.age = age;
 }
-
 const people = [
   new Person('Wes', 'Washington', 25),
   new Person('Casey', 'Codefellow', 38),
@@ -102,6 +112,9 @@ const people = [
 
 const sortPeople = (arr) => {
   // Solution code here...
+  return arr.sort((a, b) => {
+    a.lastName > b.lastName;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -116,6 +129,15 @@ If two people have the same full name, the younger one should come first. Do not
 
 const sortPeopleBetter = (arr) => {
   // Solution code here...
+  return arr.sort((a, b) => {
+    if(a.lastName.toUpperCase() === b.lastName && a.firstName === b.firstName) {
+      a.age > b.age;
+    }else if(a.lastName === b.lastName) {
+      a.firstName > b.firstName;
+    }else {
+      a.lastName > b.lastName;
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
