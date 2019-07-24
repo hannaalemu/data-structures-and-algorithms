@@ -54,10 +54,8 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 
 const alphabetizeBetter = (arr) => {
   // Solution code here...
-  arr.sort( (a,b) => {
-    a.toUpperCase > b.toUpperCase;
-  });
-  return arr;
+  return arr.sort( (a,b) => a.toUpperCase() > b.toUpperCase());
+
 };
 /* ------------------------------------------------------------------------------------------------
 // CHALLENGE 5
@@ -88,9 +86,7 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 
 const sortNumbersByLength = (arr) => {
   // Solution code here...
-  return arr.sort((a, b) => {
-    a.toString().length - b.toString().length;
-  });
+  return arr.sort((a, b) => a.toString().length - b.toString().length);
 };
 
 /*-----------------------------------------------------------------------------------------------
@@ -112,9 +108,7 @@ const people = [
 
 const sortPeople = (arr) => {
   // Solution code here...
-  return arr.sort((a, b) => {
-    a.lastName > b.lastName;
-  });
+  return arr.sort((a, b) => a.lastName > b.lastName);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -129,15 +123,19 @@ If two people have the same full name, the younger one should come first. Do not
 
 const sortPeopleBetter = (arr) => {
   // Solution code here...
-  return arr.sort((a, b) => {
-    if(a.lastName.toUpperCase() === b.lastName && a.firstName === b.firstName) {
-      a.age > b.age;
-    }else if(a.lastName === b.lastName) {
-      a.firstName > b.firstName;
-    }else {
-      a.lastName > b.lastName;
+  arr.sort((a,b) => {
+    if(a.lastName < b.lastName) {
+      return -1;
+    } if (a.lastName > b.lastName) {
+      return 1;
+    } if (a.firstName < b.firstName) {
+      return -1;
+    }if (a.firstName > b.firstName) {
+      return 1;
     }
+    return a.age - b.age;
   });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -163,9 +161,29 @@ const meetings = [
 ];
 
 const sortMeetingsByDay = (arr) => {
-  // Solution code here...
-};
+  const dayValues = {
+    'Monday': 1,
+    'Tuesday': 2,
+    'Wednesday': 3,
+    'Thursday': 4,
+    'Friday': 5,
+  };
 
+  return arr.sort((a,b) => {
+
+    if (dayValues[a.dayOfWeek] > dayValues[b.dayOfWeek]) {
+      return 1;
+    } else if (dayValues[a.dayOfWeek] < dayValues[b.dayOfWeek]) {
+      return -1;
+    } else {
+      if ((parseInt(a.end) - parseInt(a.start)) < (parseInt(b.end) - parseInt(b.start))) {
+        return -1;
+      } else if ((parseInt(a.end) - parseInt(a.start)) > (parseInt(b.end) - parseInt(b.start)))
+        return 1;
+    }
+    return 0;
+  });
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
 
@@ -178,6 +196,27 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 
 const sortSchedule = (arr) => {
   // Solution code here...
+  const dayValues = {
+    'Monday': 1,
+    'Tuesday': 2,
+    'Wednesday': 3,
+    'Thursday': 4,
+    'Friday': 5,
+  };
+
+  return arr.sort( (a,b) => { //(a,b) = "passing a comparison function" - one value and then next value
+    if (dayValues[a.dayOfWeek] > dayValues[b.dayOfWeek]) {
+      return 1;
+    } else if (dayValues[a.dayOfWeek] < dayValues[b.dayOfWeek]) {
+      return -1;
+    } else {
+      if ((parseInt(a.end) - parseInt(a.start)) < (parseInt(b.end) - parseInt(b.start))) {
+        return -1;
+      } else if ((parseInt(a.end) - parseInt(a.start)) > (parseInt(b.end) - parseInt(b.start)))
+        return 1;
+    }
+    return 0;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
