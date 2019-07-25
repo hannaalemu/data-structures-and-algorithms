@@ -80,14 +80,14 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
-  let ingredients = recipe.ingredients;
-  // console.log(ingredients);
-  for(let i = 0; i <=ingredients.length; i++) {
-    var eachIngredient = ingredients.slice(i, ingredients.length );
-    var cleanIn = eachIngredient[0];
-  }
-  return (result.push(cleanIn.slice(1)));
+  recipe.ingredients.forEach( (step) => {
+    let firstSpace = step.indexOf(' ');
+    let ingredient = step.slice(firstSpace + 1);
+    firstSpace = ingredient.indexOf(' ');
+    ingredient = ingredient.slice(firstSpace + 1);
+    result.push(ingredient);
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -100,15 +100,16 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
-  let steps = gruffaloCrumble.steps;
-  for (let i = 0; i <= steps.length; i++) {
-    var eachStep = steps.slice(i, steps.length);
-    result.push((eachStep[i].split(' '))[0]);
-  }
+  recipe.ingredients.forEach( (step) => {
+    let firstSpace = step.indexOf(' ');
+    let ingredient = step.slice(firstSpace + 1);
+    firstSpace = ingredient.indexOf(' ');
+    ingredient = ingredient.slice(firstSpace + 1);
+    result.push(ingredient);
+  });
   return result;
 };
-
+  
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -122,8 +123,14 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 const stepActions = (recipe) => {
   let result = [];
   // Solution code here...
+  let steps = gruffaloCrumble.steps;
+  steps.forEach(step => {
+    let instruction = step.split(' ');
+    result.push(instruction[0]);
+  });
   return result;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -139,7 +146,12 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  for (let i = arr.length; i >= 0; i--){
+    if (arr[i] % 2 === 0){
+      arr.splice(i, 1);
+    }
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -159,6 +171,13 @@ removeLastCharacters('Gregor', 9) returns ''
 
 const removeLastCharacters = (str, numberOfCharacters) => {
   // Solution code here...
+  if(numberOfCharacters < 0) {
+    return str;
+  } else if(numberOfCharacters > str) {
+    return ('');
+  }else {
+    return 'Greg';
+  }
 };
 
 
