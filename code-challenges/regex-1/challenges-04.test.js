@@ -27,9 +27,17 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  let finder = /\b[A-Z]*?\b/g;
-  return(str.match(finder));
   // Solution code here...
+  let finder = /^[A-Z]\w*/g;
+  let arr = str.split(/\W/);
+  let arr2 = [];
+
+  arr.forEach(word => {
+    if(finder.test(word)) {
+      arr2.push(word);
+    }
+  });
+  return arr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -39,11 +47,15 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  let newArr = [];
-  let finder2 = /\b(a-j)*?\b/gi;
-  newArr.push(arr.match(finder2));
-  return(newArr);
   // Solution code here...
+  let newArr = [];
+  let regex = /^[A-Ja-j]/;
+  arr.forEach( cityName => {
+    if(regex.test(cityName)) {
+      newArr.push(cityName);
+    }
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,8 +72,8 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
-  let validator2 = /\b(oct)\b/g;
-  return(input.test(validator2));
+  let regex = /^[Oo]ct(ober)?$/;
+  return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,6 +88,15 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 
 const noPunctuation = str => {
   // Solution code here...
+  let regex = /[A-Za-z0-9]+\s/g;
+  let arr = [];
+
+  if(str.match(regex)) {
+    return str.match(regex);
+  }
+  else{
+    return arr;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -92,6 +113,8 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 
 let hangman = (str) => {
   // Solution code here...
+  let possible = /[AEIOUaeiou]/g;
+  return str.replace(possible, '_');
 };
 
 /* ------------------------------------------------------------------------------------------------
