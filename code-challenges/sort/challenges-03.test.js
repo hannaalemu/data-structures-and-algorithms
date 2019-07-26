@@ -161,6 +161,24 @@ const meetings = [
 ];
 
 const sortMeetingsByDay = (arr) => {
+  // Solution code here...
+  const dayValues = {
+    "Monday" : 1,
+    "Tuesday" :2,
+    "Wednesday" :3,
+    "Thursday" :4,
+    "Friday" : 5,
+  }
+  return arr.sort((a, b) => {
+    if(dayValues[a.dayOfWeek] > dayValues[b.dayOfWeek]) {
+      return 1;
+    } else if(dayValues[a.dayOfWeek] < dayValues[b.dayOfWeek]) {
+      return -1;
+    }else{
+      return 0;
+    }
+  })
+=======
   const dayValues = {
     'Monday': 1,
     'Tuesday': 2,
@@ -182,7 +200,6 @@ const sortMeetingsByDay = (arr) => {
         return 1;
     }
     return 0;
-  });
 };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
