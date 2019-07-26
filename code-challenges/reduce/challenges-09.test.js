@@ -87,8 +87,8 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
+  return [...str].reduce((rev, character)=> character + rev, '');
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -158,6 +158,10 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 
 const calculateAverage = (arr) => {
   // Solution code here...
+  return arr.reduce((accumulator , value) => {
+    accumulator += value / arr.length;
+    return accumulator;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -179,6 +183,10 @@ const isPrime = (value) => {
 
 const countPrimeNumbers = (arr) => {
   // Solution code here...
+  return arr.reduce((accumulator , value) => {
+    accumulator += isPrime(value);
+    return accumulator;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
