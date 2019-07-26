@@ -10,7 +10,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 
 const firstLetters = (arr) => {
   // Solution code here...
- return arr.map(element =>{
+  return arr.map(element =>{
     return element.charAt(0);
   });
 };
@@ -25,7 +25,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 
 const findHappiness = (arr) => {
   // Solution code here...
- 
+
   return arr.filter(element => {
     return element.includes(':)');
   });
@@ -57,6 +57,13 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   // Solution code here...
+  let newStr = '';
+  for(let i = 0; i< str.length; i++) {
+    if(i % 2 !== 0) {
+      newStr += str[i];
+    }
+  }
+  return newStr;
 };
 
 /* ------------------------------------------------------------------------------------------------
