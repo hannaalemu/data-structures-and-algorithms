@@ -10,7 +10,7 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 
 const toTitleCase = (arr) => {
   // Solution code here...
-  return arr.map(word => word.charAt(0).toUpperCase());
+  return arr.map(word => word.charAt(0).toUpperCase() + word.slice(1));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -86,16 +86,17 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
-  let lukeMass = 77;
   let newArray = [];
-  arr.forEach( character => {
-      if(character.mass > lukeMass) {
-          newArra.push(character.name);
-      };
-      return newArray.join('-');
-}
+  for(let i = 0; i < arr.length; i++) {
+    let character = arr[i];
+    if( character.mass.toString() > 77 ){
+      newArray.push(character.name);
+    }
+  }
+  return newArray.join(' - ');
+};
 
-/* ------------------------------------------------------------------------------------------------
+/* -------------------------- ----------------------------------------------------------------------
 CHALLENGE 3
 Write a function named sortBy that takes in an array of objects, each of which has a particular property, and sorts those objects by that property, lowest to highest, returning the same array.
 
@@ -111,9 +112,7 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   // Solution code here...
-  return arr.sort((a, b) =>{
-      a.price < b.price
-  });
+  return arr.sort((a, b) => a.name < b.name);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -130,8 +129,8 @@ https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
 // Solution code here...
-let regex = /^(https://)/;
-return regex.test(url);
+// let regex = /^(https://)/;
+// return regex.test(url);
 };
 
 /* ------------------------------------------------------------------------------------------------
