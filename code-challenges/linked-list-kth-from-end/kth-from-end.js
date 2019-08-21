@@ -8,12 +8,19 @@ class LinkedList {
     }
 };
 
-//Hanna - this method will add a node with the value of (value) to the end of the linked list
-
-append(value) {
-    if(this.head === null) {
-        this.head = new Node(value);
+kthFromEnd(k) {
+    const headNode = this.head;
+    if(!headNode || headNode.next === null && k ===0 || k < 0) {
+        return;
+    } else if(headNode.next === null && k ===0) {
+        return headNode.value;
     } else {
-        this.appendValueHelper(value, this.head);
-    }
-}
+        let count = 0;
+        while(currentNode.next != 0) {
+        currentNode = this.head;
+        currentNode = this.next;
+        console.log(count++)
+    } 
+  }}
+
+module.exports = LinkedList;
