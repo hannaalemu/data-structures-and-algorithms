@@ -1,0 +1,20 @@
+{
+  "name": "tdd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  },
+  "author": "",
+  "dependencies": {
+    "mongodb-memory-server": "^5.2.0",
+    "mongoose": "^5.6.11",
+    "supertest": "^4.0.2"
+  },
+  "description": ""
+}
