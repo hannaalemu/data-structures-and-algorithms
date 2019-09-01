@@ -46,6 +46,10 @@ class Stack {
     }
 
   }
+ // if(this.top) {
+//      newTop.next = this.top
+//  } 
+//  this.top = newTop;
 
   peek() {
 
@@ -60,9 +64,31 @@ class Stack {
       }
     }
   }
+  //Queues
+
+  enqueue(value) {
+      const newRear = new Node(value);
+
+      if(this.rear) {
+         newRear.next = this.rear;
+         this.rear = newRear;
+      } else {
+          this.rear = newRear;
+          this.front = newRear;
+
+      }
+  }
+
+  deque() {
+      if(this.front) {
+          let temp = this.front;
+      }
+  }
+
+
+
 
 }
-
 
 
 
