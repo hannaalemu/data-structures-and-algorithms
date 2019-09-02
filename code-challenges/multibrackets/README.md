@@ -13,7 +13,7 @@ Your function should take a string as its only argument, and should return a boo
  
 
 ## Approach & Efficiency
-
+I approached this challenge by creating a stack to hold my opening brackets. Then I used if statements to check for matching the opening and closing brackets. If the opening brackets match the closing brackets, we pop the bracket off the stack. At the end, if everything is popped out of the stack, the function returns true, else it returns false.
 ## White board
 
 ![Image](assets/IMG-0033.JPG)
