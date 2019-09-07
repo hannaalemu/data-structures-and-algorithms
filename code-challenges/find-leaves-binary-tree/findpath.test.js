@@ -2,8 +2,8 @@
 
 const Node = require('./Node');
 
-const pathLength = require('./findleaves');
-const countPathLength = require('./findleaves');
+const pathLength = require('./findPath');
+const countPathLength = require('./findPath');
 
 describe('Find path between parent and child', () => {
   test('It can find the path between a parent and child node', () => {
@@ -31,9 +31,7 @@ describe('Find path between parent and child', () => {
     four.left = seven;
     four.right = eight;
 
-    
-    console.log(pathLength(five,5, 8));
-
+    expect((pathLength(five,5, 8))).toEqual(8);
   });
 
 });
