@@ -9,16 +9,16 @@ class LinkedList {
   //Hanna - this method will add a node with the value of (value) to the end of the linked list
 
   insert(value) {
-    let newNode = new Node();
-
+    const newHead = new Node(value);
     if(this.head === null) {
-      this.head = new Node(value);
+      this.head = newHead;
     } else {
-      newNode.next = this.head;
-      this.head = newNode;
+      newHead.next = this.head;
+      this.head = newHead;
     }
   }
 
+}
+module.exports = LinkedList;
 
-  module.exports = LinkedList;
-  
+
