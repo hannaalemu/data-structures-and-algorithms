@@ -1,49 +1,33 @@
 'use strict';
 
-class Node {
-  constructor(data, left = null, right = null) {
-    this.data = data;
-    this.left = left;
-    this.right = right;
-  }
-}
+const node = require('./node');
 
 class BinaryTree {
   constructor() {
     this.root = null;
   }
-
-  append(value) {
-    let current = this.root;
-    if(current === null) {
-      this.root = new Node(value);
-    }
-    else {
-      const searchTree = function(current) {
-        if(value < current.data) {
-          if(current.left === null) {
-            current.left = new Node(value);
-            return;
-          }
-          else if(current.left !== null) {
-            return searchTree(current.left);
-          }
-        }
-
-        else if(value > current.data) {
-          if(current.right === null) {
-            current.right = new Node(value);
-            return;
-
-          } else if( current.right !== null) {
-            return searchTree(current.right);
-          }
-        }
-
-      };
-    }
-  }
-
 }
 
-module.exports = BinaryTree;
+const findLeaves = (root) => {
+  let leavesArray = [];
+  if(root.left === null && root.right === null) {
+    leavesArray.push(root.data);
+  }
+  else{
+    searchTree(root, leavesArray);
+  }
+  return leavesArray;
+};
+
+const searchTree = (current, leavesArray) => {
+  if(current === null) {
+    return;
+  }
+  if(current.left === null && current.right === null) {
+    leavesArray.push(current.data);
+    return;
+  }
+  searchTree(current.left, leavesArray) || searchTree(current.right, leavesArray);
+};
+
+module.exports = {BinaryTree, findLeaves};
