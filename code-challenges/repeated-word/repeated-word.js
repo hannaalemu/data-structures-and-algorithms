@@ -40,7 +40,7 @@ if(string.length === 0) {
     });
 
     } 
-    return results;
+    return results[0];
 
 }
 
