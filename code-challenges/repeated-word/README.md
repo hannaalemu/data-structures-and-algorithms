@@ -14,4 +14,4 @@ Install dependencies and run $ npm run test
 
 #### UML
 
-![Image of white board]()
+![Image of white board](./IMG_0101.jpg)
