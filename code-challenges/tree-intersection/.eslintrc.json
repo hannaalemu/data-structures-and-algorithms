@@ -1,8 +1,8 @@
 {
     "globals": {
-      "shallow": true,
-      "render": true,
-      "mount": true
+      "expect": true,
+      "require": true,
+      "describe": true
     },
     "extends": [
       "airbnb-base",

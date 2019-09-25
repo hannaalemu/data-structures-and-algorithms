@@ -8,7 +8,7 @@ class BinaryTree {
   }
 }
 
-const findIntandUni (root1, root2) => {
+function findIntandUni (root1, root2) {
 
     //Edge casses
 
@@ -32,7 +32,7 @@ const findIntandUni (root1, root2) => {
     function traverse(root1 ) {
 
       if(hash.has(root1.value) === false ) {
-        hash.set(root1.value);
+       return hash.set(root1.value);
       }
       else {
       return traverse( root1.left ) || traverse(root1.right);
@@ -44,13 +44,14 @@ const findIntandUni (root1, root2) => {
         
       if( hash.has(root2.value) ) {
         
-        intersection.push(root2.value);
+       return intersection.push(root2.value);
       } 
       else {
         hash.set(root2.value);
         return findIntersection( root2.left) || findIntersection(root2.right);
       }
     }
+    return {'union': hash, 'intersection': intersection };
   }
 }
 
