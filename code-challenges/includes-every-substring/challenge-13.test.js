@@ -74,6 +74,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 
 const allHappy = (arr) => {
   // Solution code here...
+  return arr.filter(str => str.includes(':)')).length ===arr.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -84,6 +85,7 @@ Write a function named findAnything that takes in an array of strings, along wit
 
 const findAnything = (arr, target) => {
   // Solution code here...
+  return arr.filter(str => str.includes(target));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -94,6 +96,7 @@ Write a function named findEvery that takes in an array of strings, along with a
 
 const findEvery = (arr, target) => {
   // Solution code here...
+  return arr.filter(str => str.includes(target)).length ===arr.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -110,6 +113,9 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 
 const unenrollBrook = (arr) => {
   // Solution code here...
+  return arr.map(insideArr => {
+    return insideArr.filter(name => !name.includes('Brook'));
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------

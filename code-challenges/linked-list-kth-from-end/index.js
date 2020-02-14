@@ -6,6 +6,8 @@ import LinkedList from './linked-list';
 
 const linkedList = new LinkedList();
 
+
 linkedList.insertBefore(10);
 linkedList.kth(30);
+
 
